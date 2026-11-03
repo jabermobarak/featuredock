@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "featuredock"
+version = "1.0.0"
+description = "Point-in-time ML features with durable ingestion and late-event replay"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2,<3", "scikit-learn>=1.6,<2", "fastapi>=0.115,<1", "uvicorn>=0.30,<1"]
+
+[project.optional-dependencies]
+spark = ["pyspark==3.5.4"]
+dev = ["pytest>=8,<10", "httpx>=0.27,<1", "ruff>=0.11,<1"]
+
+[project.scripts]
+featuredock = "featuredock.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["featuredock*"]
+
+[tool.setuptools.package-data]
+featuredock = ["static/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["spark: requires optional PySpark and Java 17"]
+
+[tool.ruff]
+line-length = 100

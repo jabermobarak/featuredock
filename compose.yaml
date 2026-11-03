@@ -1,0 +1,12 @@
+services:
+  featuredock:
+    build: .
+    ports:
+      - "127.0.0.1:8020:8020"
+    volumes:
+      - featuredock-data:/data
+    environment:
+      FD_API_TOKEN: ${FD_API_TOKEN:-}
+    restart: unless-stopped
+volumes:
+  featuredock-data:

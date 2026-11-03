@@ -1,0 +1,11 @@
+.git
+.venv
+__pycache__
+.pytest_cache
+.ruff_cache
+runtime
+.env
+*.egg-info
+spark-warehouse
+metastore_db
+derby.log
