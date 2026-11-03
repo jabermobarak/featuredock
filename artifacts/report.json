@@ -1,0 +1,132 @@
+{
+  "seed": 42,
+  "assets": 24,
+  "hours": 96,
+  "start": 1792353600,
+  "train_end": 1792526400,
+  "selection_end": 1792612800,
+  "end": 1792699200,
+  "dataset_sha256": "15b85d9ab571aa80e9b4ff38b8bd4afd7a95afd46c5cc39426955eeb716073a0",
+  "data_source": "synthetic_sensor_demo",
+  "model_version": "fd5491aae433c9ed",
+  "feature_version": "hourly-v1",
+  "training_rows": 1103,
+  "validation_rows": 576,
+  "test_rows": 574,
+  "quality_gated_rows": 3,
+  "selection_trials": [
+    {
+      "C": 0.1,
+      "validation_ap": 0.7596457503415391
+    },
+    {
+      "C": 1.0,
+      "validation_ap": 0.7671924839256784
+    },
+    {
+      "C": 10.0,
+      "validation_ap": 0.7646775632039331
+    }
+  ],
+  "threshold": 0.3499999999999999,
+  "test": {
+    "average_precision": 0.7292106365650406,
+    "roc_auc": 0.8491859946476361,
+    "brier": 0.10063973194071828,
+    "precision": 0.6311475409836066,
+    "recall": 0.652542372881356,
+    "f1": 0.6416666666666667,
+    "positive_rate": 0.20557491289198607,
+    "rows": 574
+  },
+  "baseline": {
+    "average_precision": 0.20557491289198607,
+    "roc_auc": 0.5,
+    "brier": 0.1633151541794856,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "positive_rate": 0.20557491289198607,
+    "rows": 574
+  },
+  "late_data_diagnostic": {
+    "test_rows_changed_if_arrival_clock_is_ignored": 574,
+    "test_rows": 574
+  },
+  "ingestion": {
+    "inbox": {
+      "pending": 0,
+      "applied": 27672,
+      "duplicate": 288,
+      "quarantined": 144
+    },
+    "events": 27672,
+    "assets": 24,
+    "late": 3309,
+    "quarantine": [
+      {
+        "message_id": "bad-11-1115",
+        "reason": "Input should be less than or equal to 180",
+        "received_at": 1792692479
+      },
+      {
+        "message_id": "bad-22-1115",
+        "reason": "Input should be less than or equal to 180",
+        "received_at": 1792692428
+      },
+      {
+        "message_id": "bad-5-1115",
+        "reason": "Input should be less than or equal to 180",
+        "received_at": 1792688197
+      },
+      {
+        "message_id": "bad-16-1115",
+        "reason": "Input should be less than or equal to 180",
+        "received_at": 1792688196
+      },
+      {
+        "message_id": "bad-14-1115",
+        "reason": "Input should be less than or equal to 180",
+        "received_at": 1792688190
+      },
+      {
+        "message_id": "bad-3-1115",
+        "reason": "Input should be less than or equal to 180",
+        "received_at": 1792688189
+      },
+      {
+        "message_id": "bad-13-1115",
+        "reason": "Input should be less than or equal to 180",
+        "received_at": 1792688189
+      },
+      {
+        "message_id": "bad-2-1115",
+        "reason": "Input should be less than or equal to 180",
+        "received_at": 1792688179
+      },
+      {
+        "message_id": "bad-8-1115",
+        "reason": "Input should be less than or equal to 180",
+        "received_at": 1792688177
+      },
+      {
+        "message_id": "bad-1-1115",
+        "reason": "Input should be less than or equal to 180",
+        "received_at": 1792688172
+      }
+    ]
+  },
+  "training_seconds": 0.9842674849996911,
+  "spark": {
+    "status": "passed",
+    "engine": "3.5.4",
+    "master": "local[2]",
+    "events": 27672,
+    "rows": 2256,
+    "feature_values_compared": 18048,
+    "max_abs_difference": 5.684341886080802e-14,
+    "null_or_quality_mismatches": 0,
+    "seconds": 9.886740224000278
+  },
+  "target": "Any simulated temperature >82 or vibration >2.15 in the next hour; not mechanical failure"
+}
